@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASRIPT PROJECT</title>
+    <style>
+    
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000000;
+            color: #ffffff;
+            font-size: 2rem;
+            font-family: sans-serif;
+            font-size: 1.5rem; /* Bigger button text */
+        button{
+            padding: 15px 30px; /* Larger button size */
+            font-size: 1rem; /* Bigger button text */
+        }
+        }
+        button:hover{
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+            animation: bounce 5s infinite;
+            box-shadow: 0 0 10px #5e5c5c, 0 0 20px #757171;
+        }
+        h1{
+            position:absolute;
+            top:10px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            text-align:center;
+            font-size: 30px;
+            color: #ffffff;
+            text-shadow: 0 0 3px #5e5c5c, 0 0 3px #757171;
+        }
+        p{
+            position:absolute;
+            top:95px;
+            font-family: serif;
+            text-align:center;
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-shadow: 0 0 5px #5e5c5c, 0 0 5px #757171;
+        }
+        @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+    </style>
+</head>
+<body>
+    <h1>🎨Dynamic Background Colour Changer</h1>
+<p>Click on the button to change the colour !</p>
+
+    <button onclick="change()">Change Colour</button>
+
+    
+    <script>
+       // Element.addEventListener("click",change())
+        function change(){
+            let color="#"
+            let hex="0123456789abcdef"
+            for(let i=0;i<6;i++){
+                let random=Math.floor(Math.random()*16)
+                color+=hex[random]
+            }
+            document.getElementsByTagName("body")[0].style.backgroundColor=color
+            document.getElementsByTagName("body")[0].style.transition="0.5s"
+            document.getElementsByTagName("body")[0].style.transitionTimingFunction="ease-in-out"
+            setInterval(change,1000)
+        
+        }
+    </script>
+</body>
+</html>
